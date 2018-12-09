@@ -11,6 +11,8 @@ apply plugin: 'application'
 
 mainClassName = 'Main'
 
+applicationDefaultJvmArgs = ["-Djava.compiler=NONE", "-Xint"]
+
 dependencies {
 
     // Use JUnit test framework

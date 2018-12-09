@@ -10,35 +10,45 @@ import javax.crypto.Cipher;
 
 
 public class RSA {
+    private PublicKey pubKey;
+    private PrivateKey privateKey;
 
-    public void runTest() {
-        // generate public and private keys
-        KeyPair keyPair = null;
+    public byte[] runTestEncrypt(String input) {
         try {
-            keyPair = this.buildKeyPair();
-
-            PublicKey pubKey = keyPair.getPublic();
-            PrivateKey privateKey = keyPair.getPrivate();
-
             // sign the message
-            byte [] signed = this.encrypt(privateKey, "This is a secret message");
-            System.out.println(new String(signed));  // <<signed message>>
+            byte [] signed = this.encrypt(privateKey, input);
+//            System.out.println(new String(signed));  // <<signed message>>
 
-            // verify the message
-            byte[] verified = decrypt(pubKey, signed);
-            System.out.println(new String(verified));     // This is a secret message
-        } catch (NoSuchAlgorithmException e) {
+            return signed;
+        } catch (Exception e) {
             e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void runTestDecrypt(byte[] encrypted) {
+        try {
+            byte[] verified = decrypt(pubKey, encrypted);
+//            System.out.println(new String(verified));     // This is a secret message
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private KeyPair buildKeyPair() throws NoSuchAlgorithmException {
+    public void buildKeyPair() {
+        //256 Bytes
         final int keySize = 2048;
-        KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+        KeyPairGenerator keyPairGenerator = null;
+        try {
+            keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         keyPairGenerator.initialize(keySize);
-        return keyPairGenerator.genKeyPair();
+        KeyPair keyPair = keyPairGenerator.genKeyPair();
+
+        this.pubKey = keyPair.getPublic();
+        this.privateKey = keyPair.getPrivate();
     }
 
     private byte[] encrypt(PrivateKey privateKey, String message) throws Exception {
