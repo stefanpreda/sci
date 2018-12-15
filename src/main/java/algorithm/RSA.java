@@ -17,7 +17,6 @@ public class RSA {
         try {
             // sign the message
             byte [] signed = this.encrypt(privateKey, input);
-//            System.out.println(new String(signed));  // <<signed message>>
 
             return signed;
         } catch (Exception e) {
@@ -26,13 +25,13 @@ public class RSA {
         return null;
     }
 
-    public void runTestDecrypt(byte[] encrypted) {
+    public String runTestDecrypt(byte[] encrypted) {
         try {
-            byte[] verified = decrypt(pubKey, encrypted);
-//            System.out.println(new String(verified));     // This is a secret message
+            return new String(decrypt(pubKey, encrypted));
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public void buildKeyPair() {

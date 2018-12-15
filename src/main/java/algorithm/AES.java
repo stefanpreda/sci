@@ -29,14 +29,11 @@ public class AES {
     public byte[] runTestEncrypt(String input) {
         String originalString = input;
         byte[] encryptedCipher = this.encrypt(originalString);
-
-//        System.out.println(new String(encryptedCipher));
         return encryptedCipher;
     }
 
-    public void runTestDecrypt(byte[] encryptedCipher) {
-        String decryptedString = this.decrypt(encryptedCipher);
-//        System.out.println(decryptedString);
+    public String runTestDecrypt(byte[] encryptedCipher) {
+        return this.decrypt(encryptedCipher);
     }
 
     public void setKey() {
