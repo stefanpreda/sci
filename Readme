@@ -1,0 +1,34 @@
+Each test runs 100 times on random character strings
+All java optimizations turned off (cannot turn off classloading)
+1 test is run outside of 100 loop to take into account class loading time
+
+16 Characters input:
+
+            RSA(256Bytes key)         AES(256Bytes key)        Blowfish(256Bytes key)      3DES(8Bytes key)
+Encrypt     692.0                     44.0                     8.0                         6.0
+Decrypt     4.37                      0.32                     0.91                        0.32
+
+64 Characters input:
+
+            RSA(256Bytes key)         AES(256Bytes key)        Blowfish(256Bytes key)      3DES(8Bytes key)
+Encrypt     705.0                     44.0                     8.0                         7.0
+Decrypt     4.37                      0.34                     0.95                        0.32
+
+
+128 Characters input:
+
+            RSA(256Bytes key)         AES(256Bytes key)        Blowfish(256Bytes key)      3DES(8Bytes key)
+Encrypt     744.0                     44.0                     9.0                         8.0
+Decrypt     4.38                      0.34                     0.97                        0.46
+
+16 Characters input:
+
+            RSA(128Bytes key)         AES(128Bytes key)        Blowfish(128Bytes key)
+Encrypt     562.0                     41.0                     8.0
+Decrypt     1.37                      0.27                     0.89
+
+16 Characters input:
+
+            RSA(128Bytes key)       Blowfish(128Bytes key)
+Encrypt     534.0                   8.0
+Decrypt     0.48                    0.9

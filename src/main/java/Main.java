@@ -2,6 +2,7 @@ import algorithm.AES;
 import algorithm.Blowfish;
 import algorithm.RSA;
 import algorithm.RandomString;
+import algorithm.TripleDES;
 
 import java.util.concurrent.Callable;
 
@@ -105,7 +106,7 @@ public class Main {
 
         input = randomString.nextString();
         startTime = System.currentTimeMillis();
-        //AES with 256 bytes key
+        //Blowfish with 256 bytes key
         blowfish.runTestEncrypt(input);
         endTime = System.currentTimeMillis();
         initalExecutionTime = endTime - startTime;
@@ -123,6 +124,42 @@ public class Main {
             startTime = System.currentTimeMillis();
             //Blowfish with 256 bytes key
             blowfish.runTestDecrypt(encryptedString);
+            endTime = System.currentTimeMillis();
+            timeSpent = endTime - startTime;
+            totalTimeDecrypt += timeSpent;
+        }
+        averageTimeEncrypt = (float)totalTimeEncrypt / runCount;
+        averageTimeEncrypt = averageTimeEncrypt + (initalExecutionTime - averageTimeEncrypt);
+        System.out.println("Average encrypt time spent: " + averageTimeEncrypt + "\n");
+        averageTimeDecrypt = (float)totalTimeDecrypt / runCount;
+        System.out.println("Average decrypt time spent: " + averageTimeDecrypt + "\n");
+
+        TripleDES tripleDES = new TripleDES();
+        tripleDES.setKey();
+        totalTimeEncrypt = 0;
+        totalTimeDecrypt = 0;
+        System.out.println("Running TripleDES test");
+
+        input = randomString.nextString();
+        startTime = System.currentTimeMillis();
+        //Blowfish with 256 bytes key
+        tripleDES.runTestEncrypt(input);
+        endTime = System.currentTimeMillis();
+        initalExecutionTime = endTime - startTime;
+
+        for (int i = 0; i < runCount; i++) {
+            input = randomString.nextString();
+
+            startTime = System.currentTimeMillis();
+            //TripleDES with 256 bytes key
+            encrypted = tripleDES.runTestEncrypt(input);
+            endTime = System.currentTimeMillis();
+            timeSpent = endTime - startTime;
+            totalTimeEncrypt += timeSpent;
+
+            startTime = System.currentTimeMillis();
+            //TripleDES with 256 bytes key
+            tripleDES.runTestDecrypt(encrypted);
             endTime = System.currentTimeMillis();
             timeSpent = endTime - startTime;
             totalTimeDecrypt += timeSpent;

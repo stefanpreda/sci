@@ -27,9 +27,7 @@ public class AES {
     private byte[] iv;
 
     public byte[] runTestEncrypt(String input) {
-        String originalString = input;
-        byte[] encryptedCipher = this.encrypt(originalString);
-        return encryptedCipher;
+        return this.encrypt(input);
     }
 
     public String runTestDecrypt(byte[] encryptedCipher) {
