@@ -4,6 +4,9 @@ import algorithm.RSA;
 import algorithm.RandomString;
 import algorithm.TripleDES;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.concurrent.Callable;
 
 /*
@@ -23,6 +26,10 @@ public class Main {
         String encryptedString = null;
         String input = null;
 
+        File directory = new File("output");
+        if (! directory.exists())
+            directory.mkdir();
+
         RandomString randomString = new RandomString(16);
         int runCount = 100;
 
@@ -35,9 +42,15 @@ public class Main {
         input = randomString.nextString();
         startTime = System.currentTimeMillis();
         //RSA with 256 bytes key
-        rsa.runTestEncrypt(input);
+        encrypted = rsa.runTestEncrypt(input);
         endTime = System.currentTimeMillis();
         initalExecutionTime = endTime - startTime;
+
+        try {
+            Files.write(new File("output/rsa.out").toPath(), encrypted);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         for (int i = 0; i < runCount; i++) {
             input = randomString.nextString();
@@ -71,9 +84,15 @@ public class Main {
         input = randomString.nextString();
         startTime = System.currentTimeMillis();
         //AES with 256 bytes key
-        aes.runTestEncrypt(input);
+        encrypted = aes.runTestEncrypt(input);
         endTime = System.currentTimeMillis();
         initalExecutionTime = endTime - startTime;
+
+        try {
+            Files.write(new File("output/aes.out").toPath(), encrypted);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         for (int i = 0; i < runCount; i++) {
             input = randomString.nextString();
@@ -107,9 +126,15 @@ public class Main {
         input = randomString.nextString();
         startTime = System.currentTimeMillis();
         //Blowfish with 256 bytes key
-        blowfish.runTestEncrypt(input);
+        encryptedString = blowfish.runTestEncrypt(input);
         endTime = System.currentTimeMillis();
         initalExecutionTime = endTime - startTime;
+
+        try {
+            Files.write(new File("output/blowfish.out").toPath(), encryptedString.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         for (int i = 0; i < runCount; i++) {
             input = randomString.nextString();
@@ -142,10 +167,16 @@ public class Main {
 
         input = randomString.nextString();
         startTime = System.currentTimeMillis();
-        //Blowfish with 256 bytes key
-        tripleDES.runTestEncrypt(input);
+        //tripleDES with 256 bytes key
+        encrypted = tripleDES.runTestEncrypt(input);
         endTime = System.currentTimeMillis();
         initalExecutionTime = endTime - startTime;
+
+        try {
+            Files.write(new File("output/tdes.out").toPath(), encrypted);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         for (int i = 0; i < runCount; i++) {
             input = randomString.nextString();

@@ -1,0 +1,291 @@
+	|-------------------------------------------------------------|
+	|    This is the RUNS test.  It counts runs up, and runs down,|
+	|in a sequence of uniform [0,1) variables, obtained by float- |
+	|ing the 32-bit integers in the specified file. This example  |
+	|shows how runs are counted: .123,.357,.789,.425,.224,.416,.95|
+	|contains an up-run of length 3, a down-run of length 2 and an|
+	|up-run of (at least) 2, depending on the next values.  The   |
+	|covariance matrices for the runs-up and runs-down are well   |
+	|known, leading to chisquare tests for quadratic forms in the |
+	|weak inverses of the covariance matrices.  Runs are counted  |
+	|for sequences of length 10,000.  This is done ten times. Then|
+	|another three sets of ten.                                   |
+	|-------------------------------------------------------------|
+
+			The RUNS test for file BlowFish @ ../output/blowfish.out
+		(Up and down runs in a sequence of 10000 numbers)
+
+				Set 1
+		 runs up; ks test for 10 p's: 0.09201736319849585
+		 runs down; ks test for 10 p's: 0.3308630970490649
+
+				Set 2
+		 runs up; ks test for 10 p's: 0.6708384484080534
+		 runs down; ks test for 10 p's: 0.8526862760170355
+
+	|-------------------------------------------------------------|
+	|              THE MINIMUM DISTANCE TEST                      |
+	|It does this 100 times:  choose n=8000 random points in a    |
+	|square of side 10000.  Find d, the minimum distance between  |
+	|the (n^2-n)/2 pairs of points.  If the points are truly inde-|
+	|pendent uniform, then d^2, the square of the minimum distance|
+	|should be (very close to) exponentially distributed with mean|
+	|.995 .  Thus 1-exp(-d^2/.995) should be uniform on [0,1) and |
+	|a KSTEST on the resulting 100 values serves as a test of uni-|
+	|formity for random points in the square. Test numbers=0 mod 5|
+	|are printed but the KSTEST is based on the full set of 100   |
+	|random choices of 8000 points in the 10000x10000 square.     |
+	|-------------------------------------------------------------|
+
+		This is the MINIMUM DISTANCE test for file BlowFish @ ../output/blowfish.out
+
+	Sample no.	 d^2		 mean		equiv uni
+dmin=0 @ i=1 j=0 k=24
+dmin=0 @ i=2 j=0 k=16
+dmin=0 @ i=3 j=7 k=13
+dmin=0 @ i=4 j=1 k=16
+dmin=0 @ i=5 j=43 k=52
+
+	   5		    0.0000		    0.0000		    0.0000dmin=0 @ i=6 j=18 k=25
+dmin=0 @ i=7 j=24 k=36
+dmin=0 @ i=8 j=4 k=19
+dmin=0 @ i=9 j=34 k=44
+dmin=0 @ i=10 j=2 k=23
+
+	   10		    0.0000		    0.0000		    0.0000dmin=0 @ i=11 j=16 k=27
+dmin=0 @ i=12 j=58 k=78
+dmin=0 @ i=13 j=19 k=21
+dmin=0 @ i=14 j=3 k=24
+dmin=0 @ i=15 j=0 k=2
+
+	   15		    0.0000		    0.0000		    0.0000dmin=0 @ i=16 j=40 k=42
+dmin=0 @ i=17 j=10 k=21
+dmin=0 @ i=18 j=1 k=26
+dmin=0 @ i=19 j=15 k=17
+dmin=0 @ i=20 j=1 k=3
+
+	   20		    0.0000		    0.0000		    0.0000dmin=0 @ i=21 j=0 k=14
+dmin=0 @ i=22 j=7 k=16
+dmin=0 @ i=23 j=8 k=12
+dmin=0 @ i=24 j=6 k=20
+dmin=0 @ i=25 j=20 k=25
+
+	   25		    0.0000		    0.0000		    0.0000dmin=0 @ i=26 j=1 k=33
+dmin=0 @ i=27 j=3 k=23
+dmin=0 @ i=28 j=56 k=75
+dmin=0 @ i=29 j=15 k=16
+dmin=0 @ i=30 j=1 k=4
+
+	   30		    0.0000		    0.0000		    0.0000dmin=0 @ i=31 j=4 k=14
+dmin=0 @ i=32 j=48 k=57
+dmin=0 @ i=33 j=6 k=11
+dmin=0 @ i=34 j=3 k=9
+dmin=0 @ i=35 j=50 k=55
+
+	   35		    0.0000		    0.0000		    0.0000dmin=0 @ i=36 j=14 k=29
+dmin=0 @ i=37 j=0 k=20
+dmin=0 @ i=38 j=15 k=16
+dmin=0 @ i=39 j=1 k=2
+dmin=0 @ i=40 j=38 k=41
+
+	   40		    0.0000		    0.0000		    0.0000dmin=0 @ i=41 j=2 k=15
+dmin=0 @ i=42 j=2 k=23
+dmin=0 @ i=43 j=1 k=9
+dmin=0 @ i=44 j=10 k=15
+dmin=0 @ i=45 j=11 k=14
+
+	   45		    0.0000		    0.0000		    0.0000dmin=0 @ i=46 j=1 k=26
+dmin=0 @ i=47 j=15 k=17
+dmin=0 @ i=48 j=16 k=30
+dmin=0 @ i=49 j=26 k=34
+dmin=0 @ i=50 j=15 k=24
+
+	   50		    0.0000		    0.0000		    0.0000dmin=0 @ i=51 j=1 k=7
+dmin=0 @ i=52 j=11 k=27
+dmin=0 @ i=53 j=14 k=19
+dmin=0 @ i=54 j=2 k=12
+dmin=0 @ i=55 j=0 k=25
+
+	   55		    0.0000		    0.0000		    0.0000dmin=0 @ i=56 j=4 k=23
+dmin=0 @ i=57 j=18 k=20
+dmin=0 @ i=58 j=4 k=9
+dmin=0 @ i=59 j=7 k=22
+dmin=0 @ i=60 j=8 k=12
+
+	   60		    0.0000		    0.0000		    0.0000dmin=0 @ i=61 j=0 k=10
+dmin=0 @ i=62 j=73 k=74
+dmin=0 @ i=63 j=4 k=24
+dmin=0 @ i=64 j=1 k=16
+dmin=0 @ i=65 j=72 k=85
+
+	   65		    0.0000		    0.0000		    0.0000dmin=0 @ i=66 j=1 k=13
+dmin=0 @ i=67 j=6 k=13
+dmin=0 @ i=68 j=4 k=16
+dmin=0 @ i=69 j=3 k=19
+dmin=0 @ i=70 j=2 k=3
+
+	   70		    0.0000		    0.0000		    0.0000dmin=0 @ i=71 j=1 k=13
+dmin=0 @ i=72 j=26 k=38
+dmin=0 @ i=73 j=4 k=16
+dmin=0 @ i=74 j=15 k=31
+dmin=0 @ i=75 j=5 k=13
+
+	   75		    0.0000		    0.0000		    0.0000dmin=0 @ i=76 j=11 k=12
+dmin=0 @ i=77 j=2 k=6
+dmin=0 @ i=78 j=22 k=25
+dmin=0 @ i=79 j=0 k=29
+dmin=0 @ i=80 j=2 k=19
+
+	   80		    0.0000		    0.0000		    0.0000dmin=0 @ i=81 j=0 k=7
+dmin=0 @ i=82 j=0 k=16
+dmin=0 @ i=83 j=9 k=20
+dmin=0 @ i=84 j=4 k=18
+dmin=0 @ i=85 j=1 k=23
+
+	   85		    0.0000		    0.0000		    0.0000dmin=0 @ i=86 j=4 k=6
+dmin=0 @ i=87 j=25 k=30
+dmin=0 @ i=88 j=59 k=65
+dmin=0 @ i=89 j=3 k=22
+dmin=0 @ i=90 j=2 k=30
+
+	   90		    0.0000		    0.0000		    0.0000dmin=0 @ i=91 j=6 k=21
+dmin=0 @ i=92 j=16 k=23
+dmin=0 @ i=93 j=34 k=38
+dmin=0 @ i=94 j=0 k=1
+dmin=0 @ i=95 j=0 k=13
+
+	   95		    0.0000		    0.0000		    0.0000dmin=0 @ i=96 j=9 k=25
+dmin=0 @ i=97 j=0 k=19
+dmin=0 @ i=98 j=5 k=15
+dmin=0 @ i=99 j=31 k=34
+dmin=0 @ i=100 j=5 k=31
+
+	   100		    0.0000		    0.0000		    0.0000
+	--------------------------------------------------------------
+
+	Result of KS test on 100 transformed mindist^2's: p-value=    0.0000
+
+	|-------------------------------------------------------------|
+	|    This is the COUNT-THE-1''s TEST on a stream of bytes.    |
+	|Consider the file under test as a stream of bytes (four per  |
+	|32 bit integer).  Each byte can contain from 0 to 8 1''s,    |
+	|with probabilities 1,8,28,56,70,56,28,8,1 over 256.  Now let |
+	|the stream of bytes provide a string of overlapping  5-letter|
+	|words, each "letter" taking values A,B,C,D,E. The letters are|
+	|determined by the number of 1''s in a byte: 0,1,or 2 yield A,|
+	|3 yields B, 4 yields C, 5 yields D and 6,7 or 8 yield E. Thus|
+	|we have a monkey at a typewriter hitting five keys with vari-|
+	|ous probabilities (37,56,70,56,37 over 256).  There are 5^5  |
+	|possible 5-letter words, and from a string of 256,000 (over- |
+	|lapping) 5-letter words, counts are made on the frequencies  |
+	|for each word.   The quadratic form in the weak inverse of   |
+	|the covariance matrix of the cell counts provides a chisquare|
+	|test: Q5-Q4, the difference of the naive Pearson sums of     |
+	|(OBS-EXP)^2/EXP on counts for 5- and 4-letter cell counts.   |
+
+	|-------------------------------------------------------------|
+
+		Test result for the byte stream from BlowFish @ ../output/blowfish.out
+	  (Degrees of freedom: 5^4-5^3=2500; sample size: 2560000)
+
+			chisquare	z-score		p-value
+			940,459.4506		13,264.7498		    0.0000
+
+	|-------------------------------------------------------------|
+	|    This is the COUNT-THE-1''s TEST on a stream of bytes.    |
+	|Consider the file under test as a stream of bytes (four per  |
+	|32 bit integer).  Each byte can contain from 0 to 8 1''s,    |
+	|with probabilities 1,8,28,56,70,56,28,8,1 over 256.  Now let |
+	|the stream of bytes provide a string of overlapping  5-letter|
+	|words, each "letter" taking values A,B,C,D,E. The letters are|
+	|determined by the number of 1''s in a byte: 0,1,or 2 yield A,|
+	|3 yields B, 4 yields C, 5 yields D and 6,7 or 8 yield E. Thus|
+	|we have a monkey at a typewriter hitting five keys with vari-|
+	|ous probabilities (37,56,70,56,37 over 256).  There are 5^5  |
+	|possible 5-letter words, and from a string of 256,000 (over- |
+	|lapping) 5-letter words, counts are made on the frequencies  |
+	|for each word.   The quadratic form in the weak inverse of   |
+	|the covariance matrix of the cell counts provides a chisquare|
+	|test: Q5-Q4, the difference of the naive Pearson sums of     |
+	|(OBS-EXP)^2/EXP on counts for 5- and 4-letter cell counts.   |
+
+	|-------------------------------------------------------------|
+
+		Test results for specific bytes from BlowFish @ ../output/blowfish.out
+	  (Degrees of freedom: 5^4-5^3=2500; sample size: 256000)
+
+	bits used	chisquare	z-score		p-value
+	1 to 8  	78,775,167.3844		1,114,013.7456		    0.0000
+	2 to 9  	78,611,613.7078		1,111,700.7473		    0.0000
+	3 to 10  	78,530,864.4446		1,110,558.7803		    0.0000
+	4 to 11  	78,275,354.7958		1,106,945.3282		    0.0000
+	5 to 12  	78,605,696.5886		1,111,617.0666		    0.0000
+	6 to 13  	78,352,532.6325		1,108,036.7876		    0.0000
+	7 to 14  	78,657,972.5939		1,112,356.3610		    0.0000
+	8 to 15  	79,187,942.7647		1,119,851.2710		    0.0000
+	9 to 16  	78,214,879.0274		1,106,090.0717		    0.0000
+	10 to 17  	78,504,370.0772		1,110,184.0933		    0.0000
+	11 to 18  	78,730,272.9145		1,113,378.8419		    0.0000
+	12 to 19  	78,375,120.9266		1,108,356.2343		    0.0000
+	13 to 20  	78,886,056.0470		1,115,581.9481		    0.0000
+	14 to 21  	78,373,468.6965		1,108,332.8683		    0.0000
+	15 to 22  	79,315,478.0847		1,121,654.8928		    0.0000
+	16 to 23  	78,952,712.3720		1,116,524.6109		    0.0000
+	17 to 24  	78,837,940.9677		1,114,901.4981		    0.0000
+	18 to 25  	78,504,446.3087		1,110,185.1714		    0.0000
+	19 to 26  	78,853,206.1527		1,115,117.3804		    0.0000
+	20 to 27  	78,022,933.6152		1,103,375.5536		    0.0000
+	21 to 28  	25,837,233.7135		365,358.3080		    0.0000
+	22 to 29  	4,146,241.7086		58,601.3572		    0.0000
+	23 to 30  	648,714.6061		9,138.8546		    0.0000
+	24 to 31  	170,959.3377		2,382.3748		    0.0000
+	25 to 32  	96,782.2092		1,333.3518		    0.0000
+
+	|-------------------------------------------------------------|
+	|                  THE BITSTREAM TEST                         |
+	|The file under test is viewed as a stream of bits. Call them |
+	|b1,b2,... .  Consider an alphabet with two "letters", 0 and 1|
+	|and think of the stream of bits as a succession of 20-letter |
+	|"words", overlapping.  Thus the first word is b1b2...b20, the|
+	|second is b2b3...b21, and so on.  The bitstream test counts  |
+	|the number of missing 20-letter (20-bit) words in a string of|
+	|2^21 overlapping 20-letter words.  There are 2^20 possible 20|
+	|letter words.  For a truly random string of 2^21+19 bits, the|
+	|number of missing words j should be (very close to) normally |
+	|distributed with mean 141,909 and sigma 428.  Thus           |
+	| (j-141909)/428 should be a standard normal variate (z score)|
+	|that leads to a uniform [0,1) p value.  The test is repeated |
+	|twenty times.                                                |
+	|-------------------------------------------------------------|
+
+		THE OVERLAPPING 20-TUPLES BITSTREAM  TEST for BlowFish @ ../output/blowfish.out
+	 (20 bits/word, 2097152 words 20 bitstreams. No. missing words
+	  should average 141,909.3300 with sigma=  428.0000.)
+	----------------------------------------------------------------
+
+		   Bitstream test results for BlowFish @ ../output/blowfish.out.
+
+	Bitstream	No. missing words	z-score		p-value
+	   1		1045237 			2,110.5787		    0.0000
+	   2		1045248 			2,110.6044		    0.0000
+	   3		1045248 			2,110.6044		    0.0000
+	   4		1045248 			2,110.6044		    0.0000
+	   5		1045248 			2,110.6044		    0.0000
+	   6		1045248 			2,110.6044		    0.0000
+	   7		1045248 			2,110.6044		    0.0000
+	   8		1045248 			2,110.6044		    0.0000
+	   9		1045248 			2,110.6044		    0.0000
+	   10		1045248 			2,110.6044		    0.0000
+	   11		1045248 			2,110.6044		    0.0000
+	   12		1045248 			2,110.6044		    0.0000
+	   13		1045248 			2,110.6044		    0.0000
+	   14		1045248 			2,110.6044		    0.0000
+	   15		1045248 			2,110.6044		    0.0000
+	   16		1045248 			2,110.6044		    0.0000
+	   17		1045248 			2,110.6044		    0.0000
+	   18		1045248 			2,110.6044		    0.0000
+	   19		1045248 			2,110.6044		    0.0000
+	   20		1045248 			2,110.6044		    0.0000
+
+
+

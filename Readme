@@ -1,6 +1,12 @@
 Each test runs 100 times on random character strings
 All java optimizations turned off (cannot turn off classloading)
 1 test is run outside of 100 loop to take into account class loading time
+https://sourceforge.net/projects/jrandtest/ - randomness tests are taken from here
+all randomness tests are executed on encrypted strings with 16 characters (256 bytes keys for all except 3DES which has 8 Bytes key)
+https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-22r1a.pdf
+results folder contains output randomness tests
+
+Results of performance tests:
 
 16 Characters input:
 

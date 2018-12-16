@@ -1,0 +1,813 @@
+
+	|-------------------------------------------------------------|
+	|    This is the RUNS test.  It counts runs up, and runs down,|
+	|in a sequence of uniform [0,1) variables, obtained by float- |
+	|ing the 32-bit integers in the specified file. This example  |
+	|shows how runs are counted: .123,.357,.789,.425,.224,.416,.95|
+	|contains an up-run of length 3, a down-run of length 2 and an|
+	|up-run of (at least) 2, depending on the next values.  The   |
+	|covariance matrices for the runs-up and runs-down are well   |
+	|known, leading to chisquare tests for quadratic forms in the |
+	|weak inverses of the covariance matrices.  Runs are counted  |
+	|for sequences of length 10,000.  This is done ten times. Then|
+	|another three sets of ten.                                   |
+	|-------------------------------------------------------------|
+
+			The RUNS test for file RSA @ ../output/rsa.out
+		(Up and down runs in a sequence of 10000 numbers)
+
+				Set 1
+		 runs up; ks test for 10 p's: 0.0
+		 runs down; ks test for 10 p's: 0.0
+
+				Set 2
+		 runs up; ks test for 10 p's: 0.0
+		 runs down; ks test for 10 p's: 0.0
+	|-------------------------------------------------------------|
+	|    This is part of the Count test.  It counts the bits, 0's |
+	|and 1's. The sums and the differences are reported. The      |
+	|expection is 50%, each sum from total bits.                  |
+	|-------------------------------------------------------------|
+
+			The Count1Bit test for file RSA @ ../output/rsa.out
+	 ks test for 2 p's:     0.0000
+
+	 found 1048320 1 bit.
+	 expected avg for 1 bit: 524160
+	 found avg for 1 bit: 524160
+	 bit 0: 521,741.0000 delta: -2,419.0000 %:    -0.4615
+	 bit 1: 526,579.0000 delta: 2,419.0000 %:     0.4615
+	 the sum is		:4838
+	 % sum/n is		: %    0.4615
+	 stdev for 1 bit	: 2,419.0000
+	 % stdev for 1 bit	: %    0.4615
+	 chitest for 1 bit	:    22.3274
+	 r2 for 1 bit		:     �.0000
+	 pValue (erfc)			:     0.0000
+
+    |-------------------------------------------------------------|
+    |    This is part of the Count test.  It counts consecutive 2 |
+    |bits. The sums and the differences are reported. The         |
+    |expection is 25%, each sum from total 2 bits.                |
+    |-------------------------------------------------------------|
+
+            The Count2Bits test for file RSA @ ../output/rsa.out
+     ks test for 4 p's:     0.0000
+
+     found 524160 2 bits.
+     expected avg for 2 bits: 131040
+     found avg for 2 bits: 131,040.0000
+     count 2 bits 0: 129,412.0000 delta: -1,628.0000 %:    -1.2424
+     count 2 bits 1: 129,565.0000 delta: -1,475.0000 %:    -1.1256
+     count 2 bits 2: 131,315.0000 delta:   275.0000 %:     0.2099
+     count 2 bits 3: 133,868.0000 delta: 2,828.0000 %:     2.1581
+     stdev for 2 bits	: 1,795.7741
+     % stdev for 2 bits	: %    1.3704
+     chitest for 2 bits	:    98.4373
+     r2 for 2 bits		:     0.9415
+
+    |-------------------------------------------------------------|
+    |    This is part of the Count test.  It counts consecutive   |
+    |3 bits.                                                      |
+    |-------------------------------------------------------------|
+
+            The Count3Bits test for file RSA @ ../output/rsa.out
+     ks test for 8 p's:     0.0000
+
+     found 349440 3 bits.
+     expected avg for 3 bits: 43680
+     found avg for 3 bits: 43,680.0000
+     count 3 bits 0: 43,109.0000	delta:  -571.0000	%:    -1.3072
+     count 3 bits 1: 43,284.0000	delta:  -396.0000	%:    -0.9066
+     count 3 bits 2: 43,304.0000	delta:  -376.0000	%:    -0.8608
+     count 3 bits 3: 43,332.0000	delta:  -348.0000	%:    -0.7967
+     count 3 bits 4: 43,541.0000	delta:  -139.0000	%:    -0.3182
+     count 3 bits 5: 43,703.0000	delta:    23.0000	%:     0.0527
+     count 3 bits 6: 43,847.0000	delta:   167.0000	%:     0.3823
+     count 3 bits 7: 45,320.0000	delta: 1,640.0000	%:     3.7546
+     stdev for 3 bits	:   659.7988
+     % stdev for 3 bits	: %    1.5105
+     chitest for 3 bits	:    79.7316
+     r2 for 3 bits		:     0.8536
+
+    |-------------------------------------------------------------|
+    |    This is part of the Count test.  It counts consecutive 4 |
+    |bits. The sums and the differences are reported. The         |
+    |expection is 1/16, each sum from total 4 bits.               |
+    |-------------------------------------------------------------|
+
+            The Count4Bits test for file RSA @ ../output/rsa.out
+     ks test for 16 p's:     0.0000
+
+     found 262080 4 bits.
+     expected avg for 4 bits: 16380
+     found avg for 4 bits: 16380
+     4 bits 0: 15,777.0000	delta:  -603.0000	%:    -3.6813
+     4 bits 1: 15,937.0000	delta:  -443.0000	%:    -2.7045
+     4 bits 2: 16,047.0000	delta:  -333.0000	%:    -2.0330
+     4 bits 3: 16,087.0000	delta:  -293.0000	%:    -1.7888
+     4 bits 4: 16,133.0000	delta:  -247.0000	%:    -1.5079
+     4 bits 5: 16,149.0000	delta:  -231.0000	%:    -1.4103
+     4 bits 6: 16,320.0000	delta:   -60.0000	%:    -0.3663
+     4 bits 7: 16,415.0000	delta:    35.0000	%:     0.2137
+     4 bits 8: 16,538.0000	delta:   158.0000	%:     0.9646
+     4 bits 9: 16,540.0000	delta:   160.0000	%:     0.9768
+     4 bits 10: 16,542.0000	delta:   162.0000	%:     0.9890
+     4 bits 11: 16,588.0000	delta:   208.0000	%:     1.2698
+     4 bits 12: 16,623.0000	delta:   243.0000	%:     1.4835
+     4 bits 13: 16,711.0000	delta:   331.0000	%:     2.0208
+     4 bits 14: 16,765.0000	delta:   385.0000	%:     2.3504
+     4 bits 15: 16,908.0000	delta:   528.0000	%:     3.2234
+     stdev for 4 bits	:   315.3849
+     % stdev for 4 bits	: %    1.9254
+     chitest for 4 bits	:    97.1601
+     r2 for 4 bits		:     0.9829
+
+    |-------------------------------------------------------------|
+    |    This is part of the Count test.  It counts consecutive 8 |
+    |bits. The sums and the differences are reported. The         |
+    |expection is 1/256, each sum from total 8 bits.              |
+    |-------------------------------------------------------------|
+
+            The Count8Bits test for file RSA @ ../output/rsa.out
+     ks test for 256 p's:     0.0000
+
+     found 131040 8 bits / 1 byte.
+     expected avg for 8 bits / 1 byte: 511
+     found avg for 8 bits / 1 byte: 511
+     stdev for 1 byte	:    43.3901
+     % stdev for 1 byte	: %    8.4912
+     chitest for 1 byte	:   495.1937
+     r2 for 1 byte		:     0.9990
+
+    |-------------------------------------------------------------|
+    |    This is part of the Count test.  It counts consecutive   |
+    |16 bits.                                                     |
+    |-------------------------------------------------------------|
+
+            The Count16Bits test for file RSA @ ../output/rsa.out
+     ks test for 65536 p's: 0.0
+
+     found 65520 16 bits / 2 bytes.
+     expected avg for 16 bits / 2 bytes: 0
+     found avg for 16 bits / 2 bytes: 0
+     stdev for 2 bytes	: 1.4182000930426744
+     % stdev for 2 bytes	: %Infinity
+     chitest for 2 bytes	: 0.0
+     r2 for 2 bytes		: 0.9999322238857593
+
+    |-------------------------------------------------------------|
+    |    This is the Monte Carlo test. We read 16 bits as X, and  |
+    |16 bits as Y. If (X,Y) point in circle(256) we count success.|
+    |piValue is (success / num_of_points) * 4.                    |
+    |-------------------------------------------------------------|
+            The MonteCarlo test for file RSA @ ../output/rsa.out
+
+     found 32760 points.
+     found 13863 points in circle(256).
+     piValue:     1.6927
+
+    |-------------------------------------------------------------|
+    |                 This is the SQUEEZE test                    |
+    | Random integers are floated to get uniforms on [0,1). Start-|
+    | ing with k=2^31-1=2147483647, the test finds j, the number  |
+    | of iterations necessary to reduce k to 1 using the reduction|
+    | k=ceiling(k*U), with U provided by floating integers from   |
+    | the file being tested.  Such j''s are found 100,000 times,  |
+    | then counts for the number of times j was <=6,7,...,47,>=48 |
+    | are used to provide a chi-square test for cell frequencies. |
+    |-------------------------------------------------------------|
+
+            RESULTS OF SQUEEZE TEST FOR RSA @ ../output/rsa.out
+
+            Table of standardized frequency counts
+        (obs-exp)^2/exp  for j=(1,..,6), 7,...,47,(48,...)
+        %    -1.4502  	%    -2.4040  	%    -4.1897  	%    -6.3972  	%    -9.9553  	%   -15.1278
+        %   -20.7244  	%   -28.3242  	%   -35.9678  	%   -44.6776  	%   -53.6585  	%   -62.7649
+        %   -70.5876  	%   -77.8451  	%   -83.6609  	%   -87.4925  	%   -89.3327  	%   -89.1503
+        %   -87.3018  	%   -83.8726  	%   -78.9666  	%   -73.0329  	%   -66.5159  	%   -59.3652
+        %   -52.2728  	%   -45.5160  	%   -38.7668  	%   -32.7434  	%   -27.2738  	%   -22.4497
+        %   -18.2141  	%   -14.6221  	%   -11.5528  	%    -9.1094  	%    -7.0383  	%    -5.5377
+        %    -4.2354  	%    -3.2131  	%    -2.4189  	%    -1.8080  	%    -1.3428  	%    -0.9910
+        %    -1.0588
+        Chi-square with 42 degrees of freedom: 97,044.0029
+        z-score=10,583.7862, p-value=    0.0000
+    _____________________________________________________________
+
+	|-------------------------------------------------------------|
+	|    This is the COUNT-THE-1''s TEST on a stream of bytes.    |
+	|Consider the file under test as a stream of bytes (four per  |
+	|32 bit integer).  Each byte can contain from 0 to 8 1''s,    |
+	|with probabilities 1,8,28,56,70,56,28,8,1 over 256.  Now let |
+	|the stream of bytes provide a string of overlapping  5-letter|
+	|words, each "letter" taking values A,B,C,D,E. The letters are|
+	|determined by the number of 1''s in a byte: 0,1,or 2 yield A,|
+	|3 yields B, 4 yields C, 5 yields D and 6,7 or 8 yield E. Thus|
+	|we have a monkey at a typewriter hitting five keys with vari-|
+	|ous probabilities (37,56,70,56,37 over 256).  There are 5^5  |
+	|possible 5-letter words, and from a string of 256,000 (over- |
+	|lapping) 5-letter words, counts are made on the frequencies  |
+	|for each word.   The quadratic form in the weak inverse of   |
+	|the covariance matrix of the cell counts provides a chisquare|
+	|test: Q5-Q4, the difference of the naive Pearson sums of     |
+	|(OBS-EXP)^2/EXP on counts for 5- and 4-letter cell counts.   |
+
+	|-------------------------------------------------------------|
+
+		Test result for the byte stream from RSA @ ../output/rsa.out
+	  (Degrees of freedom: 5^4-5^3=2500; sample size: 2560000)
+
+    chisquare	z-score		p-value
+	2,612.5163		    1.5912		    0.0558
+
+
+	|-------------------------------------------------------------|
+	|    This is the COUNT-THE-1''s TEST on a stream of bytes.    |
+	|Consider the file under test as a stream of bytes (four per  |
+	|32 bit integer).  Each byte can contain from 0 to 8 1''s,    |
+	|with probabilities 1,8,28,56,70,56,28,8,1 over 256.  Now let |
+	|the stream of bytes provide a string of overlapping  5-letter|
+	|words, each "letter" taking values A,B,C,D,E. The letters are|
+	|determined by the number of 1''s in a byte: 0,1,or 2 yield A,|
+	|3 yields B, 4 yields C, 5 yields D and 6,7 or 8 yield E. Thus|
+	|we have a monkey at a typewriter hitting five keys with vari-|
+	|ous probabilities (37,56,70,56,37 over 256).  There are 5^5  |
+	|possible 5-letter words, and from a string of 256,000 (over- |
+	|lapping) 5-letter words, counts are made on the frequencies  |
+	|for each word.   The quadratic form in the weak inverse of   |
+	|the covariance matrix of the cell counts provides a chisquare|
+	|test: Q5-Q4, the difference of the naive Pearson sums of     |
+	|(OBS-EXP)^2/EXP on counts for 5- and 4-letter cell counts.   |
+
+	|-------------------------------------------------------------|
+
+    Test results for specific bytes from RSA @ ../output/rsa.out
+  (Degrees of freedom: 5^4-5^3=2500; sample size: 256000)
+
+	bits used	chisquare	z-score		p-value
+	1,919.9995		   -8.2024		    1.0000
+	2 to 9  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,850.5737		   -9.1843		    1.0000
+	3 to 10  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,840.7321		   -9.3235		    1.0000
+	4 to 11  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,877.7588		   -8.7998		    1.0000
+	5 to 12  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,787.7224		  -10.0731		    1.0000
+	6 to 13  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,938.5813		   -7.9397		    1.0000
+	7 to 14  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,883.5529		   -8.7179		    1.0000
+	8 to 15  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,899.0717		   -8.4984		    1.0000
+	9 to 16  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,901.3229		   -8.4666		    1.0000
+	10 to 17  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,885.6490		   -8.6882		    1.0000
+	11 to 18  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	2,043.7150		   -6.4528		    1.0000
+	12 to 19  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,856.7373		   -9.0971		    1.0000
+	13 to 20  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	2,011.1181		   -6.9138		    1.0000
+	14 to 21  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	2,053.6819		   -6.3119		    1.0000
+	15 to 22  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,850.3338		   -9.1877		    1.0000
+	16 to 23  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,892.3647		   -8.5933		    1.0000
+	17 to 24  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,872.0657		   -8.8803		    1.0000
+	18 to 25  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,897.7947		   -8.5165		    1.0000
+	19 to 26  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,890.6077		   -8.6181		    1.0000
+	20 to 27  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	2,020.6100		   -6.7796		    1.0000
+	21 to 28  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,825.9072		   -9.5331		    1.0000
+	22 to 29  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,899.9992		   -8.4853		    1.0000
+	23 to 30  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,793.5693		   -9.9904		    1.0000
+	24 to 31  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,970.9659		   -7.4817		    1.0000
+	25 to 32  filename RSA @ ../output/rsa.out is closed... at byte 32756
+	1,943.4918		   -7.8702		    1.0000
+
+	|-------------------------------------------------------------|
+	|           This is the BIRTHDAY SPACINGS TEST                |
+	|Choose m birthdays in a "year" of n days.  List the spacings |
+	|between the birthdays.  Let j be the number of values that   |
+	|occur more than once in that list, then j is asymptotically  |
+	|Poisson distributed with mean m^3/(4n).  Experience shows n  |
+	|must be quite large, say n>=2^18, for comparing the results  |
+	|to the Poisson distribution with that mean.  This test uses  |
+	|n=2^24 and m=2^10, so that the underlying distribution for j |
+	|is taken to be Poisson with lambda=2^30/(2^26)=16. A sample  |
+	|of 200 j''s is taken, and a chi-square goodness of fit test  |
+	|provides a p value.  The first test uses bits 1-24 (counting |
+	|from the left) from integers in the specified file.  Then the|
+	|file is closed and reopened, then bits 2-25 of the same inte-|
+	|gers are used to provide birthdays, and so on to bits 9-32.  |
+	|Each set of bits provides a p-value, and the nine p-values   |
+	|provide a sample for a KSTEST.                               |
+	|------------------------------------------------------------ |
+
+		RESULTS OF BIRTHDAY SPACINGS TEST FOR RSA @ ../output/rsa.out
+	(no_bdays=1024, no_days/yr=2^24, lambda=   16.0000, sample size=500)
+
+	Bits used	mean		chisqr		p-value
+	 1 to 24	    0.9900		19,596.5235		    0.0000
+	 2 to 25	    1.0020		17,039.6085		    0.0000
+	 3 to 26	    0.9720		14,735.1091		    0.0000
+	 4 to 27	    0.9680		12,600.2021		    0.0000
+	 5 to 28	    0.9500		10,630.7108		    0.0000
+	 6 to 29	    0.9800		8,830.0132		    0.0000
+	 7 to 30	    1.0880		7,142.7261		    0.0000
+	 8 to 31	    0.9860		5,680.6743		    0.0000
+	 9 to 32	    0.9860		4,347.9659		    0.0000
+
+			degree of freedoms is: 17
+	---------------------------------------------------------------
+
+		p-value for KStest on those 9 p-values:     0.0000
+
+	|-------------------------------------------------------------|
+	|This is the BINARY RANK TEST for 6x8 matrices.  From each of |
+	|six random 32-bit integers from the generator under test, a  |
+	|specified byte is chosen, and the resulting six bytes form a |
+	|6x8 binary matrix whose rank is determined.  That rank can be|
+	|from 0 to 6, but ranks 0,1,2,3 are rare; their counts are    |
+	|pooled with those for rank 4. Ranks are found for 100,000    |
+	|random matrices, and a chi-square test is performed on       |
+	|counts for ranks 6,5 and (0,...,4) (pooled together).        |
+	|-------------------------------------------------------------|
+
+		Rank test for binary matrices (6x8) from RSA @ ../output/rsa.out
+
+			      bits 1 to 8
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,646.0000	  944.3000	9,297,901.7080	9,297,901.7080
+	r=5	1,408.0000	21,743.9000	19,019.0733	9,316,920.7814
+	r=6	3,946.0000	77,311.8000	69,621.2041	9,386,541.9855
+
+		chi-square = 9,386,541.9855 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 2 to 9
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,586.0000	  944.3000	9,285,998.0715	9,285,998.0715
+	r=5	1,175.0000	21,743.9000	19,457.3948	9,305,455.4663
+	r=6	4,239.0000	77,311.8000	69,066.2240	9,374,521.6903
+
+		chi-square = 9,374,521.6903 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 3 to 10
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,594.0000	  944.3000	9,287,584.7825	9,287,584.7825
+	r=5	1,181.0000	21,743.9000	19,446.0449	9,307,030.8274
+	r=6	4,225.0000	77,311.8000	69,092.6913	9,376,123.5187
+
+		chi-square = 9,376,123.5187 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 4 to 11
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,594.0000	  944.3000	9,287,584.7825	9,287,584.7825
+	r=5	1,163.0000	21,743.9000	19,480.1045	9,307,064.8870
+	r=6	4,243.0000	77,311.8000	69,058.6629	9,376,123.5499
+
+		chi-square = 9,376,123.5499 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 5 to 12
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,599.0000	  944.3000	9,288,576.5457	9,288,576.5457
+	r=5	1,198.0000	21,743.9000	19,413.9049	9,307,990.4506
+	r=6	4,203.0000	77,311.8000	69,134.2931	9,377,124.7436
+
+		chi-square = 9,377,124.7436 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 6 to 13
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,600.0000	  944.3000	9,288,774.9047	9,288,774.9047
+	r=5	1,256.0000	21,743.9000	19,304.4507	9,308,079.3554
+	r=6	4,144.0000	77,311.8000	69,245.9231	9,377,325.2785
+
+		chi-square = 9,377,325.2785 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 7 to 14
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,596.0000	  944.3000	9,287,981.4814	9,287,981.4814
+	r=5	1,289.0000	21,743.9000	19,242.3132	9,307,223.7946
+	r=6	4,115.0000	77,311.8000	69,300.8251	9,376,524.6197
+
+		chi-square = 9,376,524.6197 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 8 to 15
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,601.0000	  944.3000	9,288,973.2658	9,288,973.2658
+	r=5	1,239.0000	21,743.9000	19,336.5001	9,308,309.7659
+	r=6	4,160.0000	77,311.8000	69,215.6416	9,377,525.4075
+
+		chi-square = 9,377,525.4075 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 9 to 16
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,596.0000	  944.3000	9,287,981.4814	9,287,981.4814
+	r=5	1,136.0000	21,743.9000	19,531.2498	9,307,512.7312
+	r=6	4,268.0000	77,311.8000	69,011.4151	9,376,524.1463
+
+		chi-square = 9,376,524.1463 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 10 to 17
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,581.0000	  944.3000	9,285,006.4459	9,285,006.4459
+	r=5	1,188.0000	21,743.9000	19,432.8076	9,304,439.2535
+	r=6	4,231.0000	77,311.8000	69,081.3476	9,373,520.6011
+
+		chi-square = 9,373,520.6011 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 11 to 18
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,602.0000	  944.3000	9,289,171.6290	9,289,171.6290
+	r=5	1,162.0000	21,743.9000	19,481.9976	9,308,653.6266
+	r=6	4,236.0000	77,311.8000	69,071.8952	9,377,725.5218
+
+		chi-square = 9,377,725.5218 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 12 to 19
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,596.0000	  944.3000	9,287,981.4814	9,287,981.4814
+	r=5	1,120.0000	21,743.9000	19,561.5897	9,307,543.0711
+	r=6	4,284.0000	77,311.8000	68,981.1849	9,376,524.2561
+
+		chi-square = 9,376,524.2561 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 13 to 20
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,598.0000	  944.3000	9,288,378.1888	9,288,378.1888
+	r=5	1,166.0000	21,743.9000	19,474.4259	9,307,852.6147
+	r=6	4,236.0000	77,311.8000	69,071.8952	9,376,924.5098
+
+		chi-square = 9,376,924.5098 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 14 to 21
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,590.0000	  944.3000	9,286,791.4100	9,286,791.4100
+	r=5	1,148.0000	21,743.9000	19,508.5103	9,306,299.9203
+	r=6	4,262.0000	77,311.8000	69,022.7531	9,375,322.6734
+
+		chi-square = 9,375,322.6734 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 15 to 22
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,605.0000	  944.3000	9,289,766.7314	9,289,766.7314
+	r=5	1,263.0000	21,743.9000	19,291.2617	9,309,057.9931
+	r=6	4,132.0000	77,311.8000	69,268.6385	9,378,326.6316
+
+		chi-square = 9,378,326.6316 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 16 to 23
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,596.0000	  944.3000	9,287,981.4814	9,287,981.4814
+	r=5	1,150.0000	21,743.9000	19,504.7217	9,307,486.2031
+	r=6	4,254.0000	77,311.8000	69,037.8718	9,376,524.0749
+
+		chi-square = 9,376,524.0749 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 17 to 24
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,625.0000	  944.3000	9,293,734.5679	9,293,734.5679
+	r=5	1,287.0000	21,743.9000	19,246.0763	9,312,980.6442
+	r=6	4,088.0000	77,311.8000	69,351.9603	9,382,332.6045
+
+		chi-square = 9,382,332.6045 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 18 to 25
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,580.0000	  944.3000	9,284,808.1272	9,284,808.1272
+	r=5	1,228.0000	21,743.9000	19,357.2520	9,304,165.3792
+	r=6	4,192.0000	77,311.8000	69,155.0986	9,373,320.4778
+
+		chi-square = 9,373,320.4778 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 19 to 26
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,599.0000	  944.3000	9,288,576.5457	9,288,576.5457
+	r=5	1,206.0000	21,743.9000	19,398.7894	9,307,975.3351
+	r=6	4,195.0000	77,311.8000	69,149.4240	9,377,124.7591
+
+		chi-square = 9,377,124.7591 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 20 to 27
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,591.0000	  944.3000	9,286,989.7500	9,286,989.7500
+	r=5	1,181.0000	21,743.9000	19,446.0449	9,306,435.7949
+	r=6	4,228.0000	77,311.8000	69,087.0193	9,375,522.8142
+
+		chi-square = 9,375,522.8142 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 21 to 28
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,596.0000	  944.3000	9,287,981.4814	9,287,981.4814
+	r=5	1,150.0000	21,743.9000	19,504.7217	9,307,486.2031
+	r=6	4,254.0000	77,311.8000	69,037.8718	9,376,524.0749
+
+		chi-square = 9,376,524.0749 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 22 to 29
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,589.0000	  944.3000	9,286,593.0722	9,286,593.0722
+	r=5	1,201.0000	21,743.9000	19,408.2359	9,306,001.3081
+	r=6	4,210.0000	77,311.8000	69,121.0548	9,375,122.3629
+
+		chi-square = 9,375,122.3629 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 23 to 30
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,600.0000	  944.3000	9,288,774.9047	9,288,774.9047
+	r=5	1,233.0000	21,743.9000	19,347.8180	9,308,122.7226
+	r=6	4,167.0000	77,311.8000	69,202.3956	9,377,325.1182
+
+		chi-square = 9,377,325.1182 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 24 to 31
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,589.0000	  944.3000	9,286,593.0722	9,286,593.0722
+	r=5	1,167.0000	21,743.9000	19,472.5332	9,306,065.6054
+	r=6	4,244.0000	77,311.8000	69,056.7727	9,375,122.3780
+
+		chi-square = 9,375,122.3780 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+
+			      bits 25 to 32
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=4	94,589.0000	  944.3000	9,286,593.0722	9,286,593.0722
+	r=5	1,188.0000	21,743.9000	19,432.8076	9,306,025.8798
+	r=6	4,223.0000	77,311.8000	69,096.4728	9,375,122.3526
+
+		chi-square = 9,375,122.3526 with df = 2;  p-value =     0.0000
+	--------------------------------------------------------------
+	    TEST SUMMARY, 25 tests on 100,000 random 6x8 matrices
+
+	    These should be 25 uniform [0,1] random variates:
+
+
+
+	    0.0000	    0.0000	    0.0000	    0.0000	    0.0000
+
+	    0.0000	    0.0000	    0.0000	    0.0000	    0.0000
+
+	    0.0000	    0.0000	    0.0000	    0.0000	    0.0000
+
+	    0.0000	    0.0000	    0.0000	    0.0000	    0.0000
+
+	    0.0000	    0.0000	    0.0000	    0.0000	    0.0000
+		The KS test for those 25 supposed UNI's yields
+			KS p-value =     0.0000
+
+	|-------------------------------------------------------------|
+	|This is the BINARY RANK TEST for 31x31 matrices. The leftmost|
+	|31 bits of 31 random integers from the test sequence are used|
+	|to form a 31x31 binary matrix over the field {0,1}. The rank |
+	|is determined. That rank can be from 0 to 31, but ranks< 28  |
+	|are rare, and their counts are pooled with those for rank 28.|
+	|Ranks are found for 40,000 such random matrices and a chisqu-|
+	|are test is performed on counts for ranks 31,30,28 and <=28. |
+	|-------------------------------------------------------------|
+		Rank test for binary matrices (31x31) from RSA @ ../output/rsa.out
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=28	38,952.0000	  211.4180	7,098,887.6836	7,098,887.6836
+	r=29	  136.0000	5,134.0106	4,865.6132	7,103,753.2968
+	r=30	  588.0000	23,103.0476	21,942.0129	7,125,695.3097
+	r=31	  324.0000	11,551.5238	10,912.6114	7,136,607.9211
+
+		chi-square = 7,136,607.9211 with df = 3;  p-value =     0.0000
+
+	|-------------------------------------------------------------|
+	|This is the BINARY RANK TEST for 32x32 matrices. A random 32x|
+	|32 binary matrix is formed, each row a 32-bit random integer.|
+	|The rank is determined. That rank can be from 0 to 32, ranks |
+	|less than 29 are rare, and their counts are pooled with those|
+	|for rank 29.  Ranks are found for 40,000 such random matrices|
+	|and a chisquare test is performed on counts for ranks  32,31,|
+	|30 and <=29.                                                 |
+	|-------------------------------------------------------------|
+		Rank test for binary matrices (32x32) from RSA @ ../output/rsa.out
+
+	RANK	OBSERVED	EXPECTED	(O-E)^2/E	SUM
+
+	r<=29	38,984.0000	  211.4180	7,110,619.9919	7,110,619.9919
+	r=30	  146.0000	5,134.0106	4,846.1625	7,115,466.1544
+	r=31	  586.0000	23,103.0476	21,945.9113	7,137,412.0656
+	r=32	  284.0000	11,551.5238	10,990.5061	7,148,402.5717
+
+		chi-square = 7,148,402.5717 with df = 3;  p-value =     0.0000
+
+	|-------------------------------------------------------------|
+	|        OPSO means Overlapping-Pairs-Sparse-Occupancy        |
+	|The OPSO test considers 2-letter words from an alphabet of   |
+	|1024 letters.  Each letter is determined by a specified ten  |
+	|bits from a 32-bit integer in the sequence to be tested. OPSO|
+	|generates  2^21 (overlapping) 2-letter words  (from 2^21+1   |
+	|"keystrokes")  and counts the number of missing words---that |
+	|is 2-letter words which do not appear in the entire sequence.|
+	|That count should be very close to normally distributed with |
+	|mean 141,909, sigma 290. Thus (missingwrds-141909)/290 should|
+	|be a standard normal variable. The OPSO test takes 32 bits at|
+	|a time from the test file and uses a designated set of ten   |
+	|consecutive bits. It then restarts the file for the next de- |
+	|signated 10 bits, and so on.                                 |
+	|------------------------------------------------------------ |
+
+			   OPSO test for file RSA @ ../output/rsa.out
+
+	Bits used	No. missing words	z-score		p-value
+	23 to 32  		1016306 		3,015.1609		    0.0000
+	22 to 31  		1016359 		3,015.3437		    0.0000
+	21 to 30  		1016340 		3,015.2782		    0.0000
+	20 to 29  		1016327 		3,015.2333		    0.0000
+	19 to 28  		1016310 		3,015.1747		    0.0000
+	18 to 27  		1016339 		3,015.2747		    0.0000
+	17 to 26  		1016351 		3,015.3161		    0.0000
+	16 to 25  		1016413 		3,015.5299		    0.0000
+	15 to 24  		1016331 		3,015.2471		    0.0000
+	14 to 23  		1016325 		3,015.2264		    0.0000
+	13 to 22  		1016348 		3,015.3058		    0.0000
+	12 to 21  		1016332 		3,015.2506		    0.0000
+	11 to 20  		1016362 		3,015.3540		    0.0000
+	10 to 19  		1016372 		3,015.3885		    0.0000
+	9 to 18  		1016341 		3,015.2816		    0.0000
+	8 to 17  		1016359 		3,015.3437		    0.0000
+	7 to 16  		1016336 		3,015.2644		    0.0000
+	6 to 15  		1016308 		3,015.1678		    0.0000
+	5 to 14  		1016308 		3,015.1678		    0.0000
+	4 to 13  		1016347 		3,015.3023		    0.0000
+	3 to 12  		1016361 		3,015.3506		    0.0000
+	2 to 11  		1016384 		3,015.4299		    0.0000
+	1 to 10  		1016343 		3,015.2885		    0.0000
+
+    |------------------------------------------------------------ |
+    |    OQSO means Overlapping-Quadruples-Sparse-Occupancy       |
+    |  The test OQSO is similar, except that it considers 4-letter|
+    |words from an alphabet of 32 letters, each letter determined |
+    |by a designated string of 5 consecutive bits from the test   |
+    |file, elements of which are assumed 32-bit random integers.  |
+    |The mean number of missing words in a sequence of 2^21 four- |
+    |letter words,  (2^21+3 "keystrokes"), is again 141909, with  |
+    |sigma = 295.  The mean is based on theory; sigma comes from  |
+    |extensive simulation.                                        |
+    |------------------------------------------------------------ |
+
+               OQSO test for file RSA @ ../output/rsa.out
+
+    Bits used	No. missing words	z-score		p-value
+    28 to 32  		1016358 		2,964.2328		    0.0000
+    27 to 31  		1016316 		2,964.0904		    0.0000
+    26 to 30  		1016308 		2,964.0633		    0.0000
+    25 to 29  		1016319 		2,964.1006		    0.0000
+    24 to 28  		1016281 		2,963.9718		    0.0000
+    23 to 27  		1016358 		2,964.2328		    0.0000
+    22 to 26  		1016344 		2,964.1853		    0.0000
+    21 to 25  		1016324 		2,964.1175		    0.0000
+    20 to 24  		1016328 		2,964.1311		    0.0000
+    19 to 23  		1016343 		2,964.1819		    0.0000
+    18 to 22  		1016323 		2,964.1141		    0.0000
+    17 to 21  		1016332 		2,964.1446		    0.0000
+    16 to 20  		1016338 		2,964.1650		    0.0000
+    15 to 19  		1016342 		2,964.1785		    0.0000
+    14 to 18  		1016320 		2,964.1040		    0.0000
+    13 to 17  		1016323 		2,964.1141		    0.0000
+    12 to 16  		1016309 		2,964.0667		    0.0000
+    11 to 15  		1016295 		2,964.0192		    0.0000
+    10 to 14  		1016305 		2,964.0531		    0.0000
+    9 to 13  		1016325 		2,964.1209		    0.0000
+    8 to 12  		1016328 		2,964.1311		    0.0000
+    7 to 11  		1016317 		2,964.0938		    0.0000
+    6 to 10  		1016338 		2,964.1650		    0.0000
+    5 to 9  		1016318 		2,964.0972		    0.0000
+    4 to 8  		1016348 		2,964.1989		    0.0000
+    3 to 7  		1016296 		2,964.0226		    0.0000
+    2 to 6  		1016336 		2,964.1582		    0.0000
+    1 to 5  		1016355 		2,964.2226		    0.0000
+
+    |------------------------------------------------------------ |
+    |    The DNA test considers an alphabet of 4 letters: C,G,A,T,|
+    |determined by two designated bits in the sequence of random  |
+    |integers being tested.  It considers 10-letter words, so that|
+    |as in OPSO and OQSO, there are 2^20 possible words, and the  |
+    |mean number of missing words from a string of 2^21  (over-   |
+    |lapping)  10-letter  words (2^21+9 "keystrokes") is 141909.  |
+    |The standard deviation sigma=339 was determined as for OQSO  |
+    |by simulation.  (Sigma for OPSO, 290, is the true value (to  |
+    |three places), not determined by simulation.                 |
+    |------------------------------------------------------------ |
+
+               DNA test for file RSA @ ../output/rsa.out
+
+    Bits used	No. missing words	z-score		p-value
+    31 to 32  		1016307 		2,579.3442		    0.0000
+    30 to 31  		1016286 		2,579.2822		    0.0000
+    29 to 30  		1016276 		2,579.2527		    0.0000
+    28 to 29  		1016309 		2,579.3501		    0.0000
+    27 to 28  		1016335 		2,579.4268		    0.0000
+    26 to 27  		1016355 		2,579.4858		    0.0000
+    25 to 26  		1016369 		2,579.5271		    0.0000
+    24 to 25  		1016294 		2,579.3058		    0.0000
+    23 to 24  		1016318 		2,579.3766		    0.0000
+    22 to 23  		1016302 		2,579.3294		    0.0000
+    21 to 22  		1016292 		2,579.2999		    0.0000
+    20 to 21  		1016304 		2,579.3353		    0.0000
+    19 to 20  		1016329 		2,579.4091		    0.0000
+    18 to 19  		1016281 		2,579.2675		    0.0000
+    17 to 18  		1016333 		2,579.4209		    0.0000
+    16 to 17  		1016390 		2,579.5890		    0.0000
+    15 to 16  		1016353 		2,579.4799		    0.0000
+    14 to 15  		1016345 		2,579.4563		    0.0000
+    13 to 14  		1016327 		2,579.4032		    0.0000
+    12 to 13  		1016292 		2,579.2999		    0.0000
+    11 to 12  		1016292 		2,579.2999		    0.0000
+    10 to 11  		1016326 		2,579.4002		    0.0000
+    9 to 10  		1016327 		2,579.4032		    0.0000
+    8 to 9  		1016295 		2,579.3088		    0.0000
+    7 to 8  		1016338 		2,579.4356		    0.0000
+    6 to 7  		1016328 		2,579.4061		    0.0000
+    5 to 6  		1016344 		2,579.4533		    0.0000
+    4 to 5  		1016323 		2,579.3914		    0.0000
+    3 to 4  		1016307 		2,579.3442		    0.0000
+    2 to 3  		1016318 		2,579.3766		    0.0000
+    1 to 2  		1016296 		2,579.3117		    0.0000
